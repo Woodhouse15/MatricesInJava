@@ -13,15 +13,14 @@ public class MatrixInput {
 	Matrix matrix = new Matrix();
 	private JTextField[] dimensions = new JTextField[2];
 	private JTextField[][] matrixIn;
-	private JTextField[][] enter;
 	private JLabel[] labels = new JLabel[2];
 	private JFrame contentFrame = new JFrame("Matrix Input");
 	private JPanel dimGUI = new JPanel();
 	private JPanel matrixGUI = new JPanel();
 	private JButton submitDim = new JButton("Submit");
 	private JButton submitMat = new JButton("Submit");
-	public MatrixInput() {
-		
+	public MatrixInput(Matrix in) {
+		this.matrix = in;
 	}
 	public void createDimInput() {
 		//Creating the dimensions input
@@ -49,6 +48,19 @@ public class MatrixInput {
             }
         }
 		contentFrame.add(matrixGUI, BorderLayout.CENTER);
+		contentFrame.add(submitMat, BorderLayout.SOUTH);
+		submitMat.addActionListener(
+				new ActionListener() {
+					public void actionPerformed(ActionEvent event) {
+						for(int i = 0; i < row; i++) {
+				            for(int j = 0; j < col; j++) {
+				            	matrix.setSquare(i, j, Integer.parseInt(matrixIn[i][j].getText()));
+				            }
+				        }
+						returnMatrix();
+					}
+				}
+			);
 	}
 	public void createGUI() {
 		createDimInput();
@@ -66,9 +78,7 @@ public class MatrixInput {
 					
 					contentFrame.remove(dimGUI);
 					contentFrame.remove(submitDim);
-					System.out.println(dim[1]);
 					createMatrixIn(dim[0],dim[1]);
-					contentFrame.add(submitMat, BorderLayout.SOUTH);
 					contentFrame.revalidate();
 	                contentFrame.repaint();
 				}
@@ -76,5 +86,9 @@ public class MatrixInput {
 		);
 		contentFrame.pack();
 		contentFrame.setVisible(true);
+	}
+	public Matrix returnMatrix() {
+		matrix.printMatrix();
+		return matrix;
 	}
 }
