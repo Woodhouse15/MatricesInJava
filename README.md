@@ -8,7 +8,7 @@ This is a matrices calculator programmed in Java
 - And more!
 
 ## Usage
-Download the .java file and run it in a java compiler like Eclipse or IntelliJ.
+Download the .java files and run it in a java compiler like Eclipse or IntelliJ.
 
 ## Status
 This code is unfinished and shall be very rarely updated.
