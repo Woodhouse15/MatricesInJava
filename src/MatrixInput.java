@@ -57,7 +57,6 @@ public class MatrixInput {
 				            	matrix.setSquare(i, j, Integer.parseInt(matrixIn[i][j].getText()));
 				            }
 				        }
-						returnMatrix();
 					}
 				}
 			);
@@ -88,7 +87,6 @@ public class MatrixInput {
 		contentFrame.setVisible(true);
 	}
 	public Matrix returnMatrix() {
-		matrix.printMatrix();
 		return matrix;
 	}
 }
