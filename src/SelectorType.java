@@ -16,10 +16,12 @@ public class SelectorType {
 	private JButton transpose = new JButton("Transpose");
 	private JFrame contentFrame = new JFrame("Matrix Calculator Input");
 	private JPanel gui = new JPanel();
+	User user = new User();
 	private int choice;
 	
-	public SelectorType(int in) {
-		this.choice = in;
+	public SelectorType(User in) {
+		this.user = in;
+		user.store(this);
 	}
 	public void createSelectionIn() {
 		//Adding ActionListeners for each button
@@ -27,6 +29,7 @@ public class SelectorType {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 1;
+						user.updateChoice();
 					}
 				}
 			);
@@ -34,6 +37,7 @@ public class SelectorType {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 2;
+						user.updateChoice();
 					}
 				}
 			);
@@ -41,6 +45,7 @@ public class SelectorType {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 3;
+						user.updateChoice();
 					}
 				}
 			);
@@ -48,6 +53,7 @@ public class SelectorType {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 4;
+						user.updateChoice();
 					}
 				}
 			);
@@ -55,6 +61,7 @@ public class SelectorType {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 5;
+						user.updateChoice();
 					}
 				}
 			);
@@ -62,6 +69,7 @@ public class SelectorType {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 6;
+						user.updateChoice();
 					}
 				}
 			);
@@ -69,6 +77,7 @@ public class SelectorType {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 7;
+						user.updateChoice();
 					}
 				}
 			);
@@ -89,4 +98,8 @@ public class SelectorType {
 		contentFrame.setVisible(true);
 		contentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	public int returnChoice() {
+		return choice;
+	}
+
 }

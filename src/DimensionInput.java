@@ -15,6 +15,7 @@ public class DimensionInput {
 	private JFrame contentFrame = new JFrame("Dimension Input");
 	private JPanel dimGUI = new JPanel();
 	private JButton submitDim = new JButton("Submit");
+	private int[] dim = new int[2];
 	
 	public DimensionInput(){
 		
@@ -42,14 +43,18 @@ public class DimensionInput {
 		submitDim.addActionListener(
 			new ActionListener() {
 				public void actionPerformed(ActionEvent event) {
-					int[] dim = new int[2];
 					for(int i = 0; i < 2; i++) {
 						dim[i] = Integer.parseInt(dimensions[i].getText());
 					}
+					Matrix test = new Matrix();
+					new MatrixInput(test,dim[0],dim[1]).createGUI();
 				}
 			}
 		);
 		contentFrame.pack();
 		contentFrame.setVisible(true);
+	}
+	public int[] returnDim() {
+		return dim;
 	}
 }
