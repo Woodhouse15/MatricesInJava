@@ -30,6 +30,7 @@ public class SelectorType {
 					public void actionPerformed(ActionEvent event) {
 						choice = 1;
 						user.updateChoice();
+						contentFrame.dispose();
 					}
 				}
 			);
@@ -38,6 +39,7 @@ public class SelectorType {
 					public void actionPerformed(ActionEvent event) {
 						choice = 2;
 						user.updateChoice();
+						contentFrame.dispose();
 					}
 				}
 			);
@@ -46,6 +48,7 @@ public class SelectorType {
 					public void actionPerformed(ActionEvent event) {
 						choice = 3;
 						user.updateChoice();
+						contentFrame.dispose();
 					}
 				}
 			);
@@ -54,6 +57,7 @@ public class SelectorType {
 					public void actionPerformed(ActionEvent event) {
 						choice = 4;
 						user.updateChoice();
+						contentFrame.dispose();
 					}
 				}
 			);
@@ -62,6 +66,7 @@ public class SelectorType {
 					public void actionPerformed(ActionEvent event) {
 						choice = 5;
 						user.updateChoice();
+						contentFrame.dispose();
 					}
 				}
 			);
@@ -70,6 +75,7 @@ public class SelectorType {
 					public void actionPerformed(ActionEvent event) {
 						choice = 6;
 						user.updateChoice();
+						contentFrame.dispose();
 					}
 				}
 			);
@@ -78,6 +84,7 @@ public class SelectorType {
 					public void actionPerformed(ActionEvent event) {
 						choice = 7;
 						user.updateChoice();
+						contentFrame.dispose();
 					}
 				}
 			);
