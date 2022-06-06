@@ -6,7 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class SelectorType {
+public class SelectorType{
 	private JButton rank = new JButton("Rank");
 	private JButton determinant = new JButton("Determinant");
 	private JButton add = new JButton("Add");
@@ -57,7 +57,7 @@ public class SelectorType {
 					public void actionPerformed(ActionEvent event) {
 						choice = 4;
 						user.updateChoice();
-						contentFrame.dispose();
+						System.exit(0);
 					}
 				}
 			);
@@ -105,6 +105,7 @@ public class SelectorType {
 		contentFrame.setVisible(true);
 		contentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
 	public int returnChoice() {
 		return choice;
 	}

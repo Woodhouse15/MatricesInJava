@@ -12,7 +12,7 @@ public class User {
 	public void updateChoice() {
 		choice = listOfSelectors.get(0).returnChoice();
 		if(choice == 1) {
-			
+			System.out.println("test");
 		}
 	}
 	public int returnC() {
