@@ -16,12 +16,9 @@ public class SelectorType{
 	private JButton transpose = new JButton("Transpose");
 	private JFrame contentFrame = new JFrame("Matrix Calculator Input");
 	private JPanel gui = new JPanel();
-	User user = new User();
 	private int choice;
 	
-	public SelectorType(User in) {
-		this.user = in;
-		user.store(this);
+	public SelectorType() {
 	}
 	public void createSelectionIn() {
 		//Adding ActionListeners for each button
@@ -29,8 +26,8 @@ public class SelectorType{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 1;
-						user.updateChoice();
-						contentFrame.dispose();
+						
+						choiceSelected();
 					}
 				}
 			);
@@ -38,8 +35,8 @@ public class SelectorType{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 2;
-						user.updateChoice();
-						contentFrame.dispose();
+						
+						choiceSelected();
 					}
 				}
 			);
@@ -47,8 +44,8 @@ public class SelectorType{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 3;
-						user.updateChoice();
-						contentFrame.dispose();
+						
+						choiceSelected();
 					}
 				}
 			);
@@ -56,7 +53,7 @@ public class SelectorType{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 4;
-						user.updateChoice();
+						
 						System.exit(0);
 					}
 				}
@@ -65,8 +62,8 @@ public class SelectorType{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 5;
-						user.updateChoice();
-						contentFrame.dispose();
+						
+						choiceSelected();
 					}
 				}
 			);
@@ -74,8 +71,8 @@ public class SelectorType{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 6;
-						user.updateChoice();
-						contentFrame.dispose();
+						
+						choiceSelected();
 					}
 				}
 			);
@@ -83,8 +80,8 @@ public class SelectorType{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						choice = 7;
-						user.updateChoice();
-						contentFrame.dispose();
+						
+						choiceSelected();
 					}
 				}
 			);
@@ -108,6 +105,11 @@ public class SelectorType{
 	
 	public int returnChoice() {
 		return choice;
+	}
+	public void choiceSelected() {
+		DimensionInput dim = new DimensionInput();
+		
+		contentFrame.dispose();
 	}
 
 }
