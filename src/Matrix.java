@@ -21,16 +21,4 @@ public class Matrix{
         System.out.println(Arrays.deepToString(matrix));
     }
 
-    public void SetOperation(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Select operation:\n1) Calculate Rank\n2) Calculate Determinant\n3) Calculate the transpose\n4) Invert matrix\n5) Add matrix\n 6) Subtract matrix\n7) Multiply matrix");
-        int operation = sc.nextInt();
-        while(operation < 1 || operation > 7){
-            System.out.println("Invalid operation");
-            System.out.println("Select operation:\n1) Calculate Rank\n2) Calculate Determinant\n3) Calculate the transpose\n4) Invert matrix\n5) Add matrix\n 6) Subtract matrix\n7) Multiply matrix");
-            operation = sc.nextInt();
-        }
-        sc.close();
-        System.out.println(operation);
-    }
 }

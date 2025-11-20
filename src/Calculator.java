@@ -1,4 +1,6 @@
+
 public class Calculator {
+
     public Matrix Addition(Matrix m1, Matrix m2){
         if(m1.size != m2.size){
             System.out.println("These matrices cannot be added, please make sure both matrices are the same size");
@@ -61,4 +63,19 @@ public class Calculator {
     public int Rank(Matrix m){
         return 0;
     }
+
+    public Matrix Transpose(Matrix m){
+        Matrix newMatrix = new Matrix(m.size);
+        for(int i = 0; i < m.size; i++){
+            for(int j = 0; j < m.size; j++){
+                newMatrix.SetValue(j,i,m.GetValue(i,j));
+            }
+        }
+        return newMatrix;
+    }
+
+    public Matrix Invert(Matrix m){
+        return new Matrix(0);
+    }
+
 }

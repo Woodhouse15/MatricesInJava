@@ -12,9 +12,30 @@ public class Main {
 				matrix.SetValue(i,j,sc.nextInt());
 			}
 		}
-		sc.close();
-		matrix.SetOperation();
+		System.out.println("Select operation:\n1) Calculate Rank\n2) Calculate Determinant\n3) Calculate the transpose\n4) Invert matrix\n5) Add matrix\n 6) Subtract matrix\n7) Multiply matrix");
+		int operation = sc.nextInt();
+		while(operation < 1 || operation > 7){
+			System.out.println("Invalid operation");
+			System.out.println("Select operation:\n1) Calculate Rank\n2) Calculate Determinant\n3) Calculate the transpose\n4) Invert matrix\n5) Add matrix\n6) Subtract matrix\n7) Multiply matrix");
+			operation = sc.nextInt();
+		}
 		matrix.PrintMatrix();
+		Calculator calculator = new Calculator();
+		switch(operation){
+			case 1:
+				System.out.println(calculator.Rank(matrix));
+				break;
+			case 2:
+				System.out.println(calculator.Determinant(matrix));
+				break;
+			case 3:
+				calculator.Transpose(matrix).PrintMatrix();
+				break;
+			case 4:
+				calculator.Invert(matrix);
+				break;
+			default:
+				System.out.println("Not implemented yet");
+		}
 	}
-
 }
