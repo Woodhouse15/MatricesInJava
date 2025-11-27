@@ -17,6 +17,17 @@ public class Matrix{
         return matrix[row][column];
     }
 
+    public boolean CheckZero(){
+        for(int i = 0; i < this.size; i++){
+            for(int j = 0; j < this.size; j++){
+                if(GetValue(i,j) != 0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public void PrintMatrix(){
         System.out.println(Arrays.deepToString(matrix));
     }
