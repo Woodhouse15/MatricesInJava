@@ -31,29 +31,27 @@ public class Calculator {
         }
     }
 
-    public int Determinant(Matrix m){
+    public float Determinant(Matrix m){
         if(m.size == 1) {
             return m.GetValue(0, 0);
         } else if (m.size == 2) {
             return (m.GetValue(0,0)*m.GetValue(1,1)) - (m.GetValue(0,1) * m.GetValue(1,0));
         }else{
-            int det = 0;
+            float det = 0;
             for(int col = 0; col < m.size; ++col){
-                int[][] sub = new int[m.size - 1][m.size - 1];
+                Matrix sub = new Matrix(m.size -1);
                 for(int i = 1; i < m.size; ++i){
                     int subc = 0;
                     for(int j = 0; j < m.size; ++j){
                         if(j == col){
                             continue;
                         }
-                        sub[i-1][subc] = m.GetValue(i,j);
+                        sub.SetValue(i-1,subc, m.GetValue(i,j));
                         subc += 1;
                     }
                 }
                 int sign = (col % 2 == 0) ? 1 : -1;
-                Matrix newm = new Matrix(m.size - 1);
-                newm.matrix = sub;
-                det += sign * m.GetValue(0,col) * Determinant(newm);
+                det += sign * m.GetValue(0,col) * Determinant(sub);
             }
             return det;
         }
@@ -116,7 +114,7 @@ public class Calculator {
 
     public Matrix SwapRow(Matrix matrix, int i, int j){
         for(int k = 0; k <= matrix.size; k++){
-            int temp = matrix.GetValue(i,k);
+            float temp = matrix.GetValue(i,k);
             matrix.SetValue(i,k, matrix.GetValue(j,k));
             matrix.SetValue(j,k,temp);
         }
