@@ -1,5 +1,6 @@
+package Matrices;
+
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Matrix{
     float[][] matrix;
