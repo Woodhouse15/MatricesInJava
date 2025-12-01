@@ -1,9 +1,6 @@
-package tests;
-
-import Matrices.Matrix;
 import org.junit.Assert;
 import org.junit.Test;
-public class MatrixTests {
+public class MatrixTest {
     @Test
     public void ZeroCheckerEmpty(){
         Matrix test = new Matrix(2);

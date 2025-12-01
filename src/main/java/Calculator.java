@@ -1,5 +1,3 @@
-package Matrices;
-
 public class Calculator {
 
     public Matrix Addition(Matrix m1, Matrix m2){

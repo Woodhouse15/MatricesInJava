@@ -1,5 +1,3 @@
-package Matrices;
-
 import java.util.Arrays;
 
 public class Matrix{
