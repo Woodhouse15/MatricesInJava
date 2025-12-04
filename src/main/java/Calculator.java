@@ -28,7 +28,7 @@ public class Calculator {
         }
     }
 
-    public float Determinant(Matrix m){
+    public static float Determinant(Matrix m){
         if(m.size == 1) {
             return m.GetValue(0, 0);
         } else if (m.size == 2) {
