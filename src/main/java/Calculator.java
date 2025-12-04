@@ -1,9 +1,8 @@
 public class Calculator {
 
-    public Matrix Addition(Matrix m1, Matrix m2){
+    public static Matrix Addition(Matrix m1, Matrix m2) throws Exception {
         if(m1.size != m2.size){
-            System.out.println("These matrices cannot be added, please make sure both matrices are the same size");
-            return null;
+            throw new Exception("These matrices cannot be added, please make sure both matrices are the same size");
         }else{
             Matrix result = new Matrix(m1.size);
             for(int i = 0; i < m1.size; i++){
@@ -15,10 +14,9 @@ public class Calculator {
         }
     }
 
-    public Matrix subtraction(Matrix m1, Matrix m2){
+    public static Matrix Subtraction(Matrix m1, Matrix m2) throws Exception {
         if(m1.size != m2.size){
-            System.out.println("These matrices cannot be added, please make sure both matrices are the same size");
-            return null;
+            throw new Exception("These matrices cannot be subtracted, please make sure both matrices are the same size");
         }else{
             Matrix result = new Matrix(m1.size);
             for(int i = 0; i < m1.size; i++){
