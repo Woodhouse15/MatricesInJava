@@ -55,7 +55,7 @@ public class Calculator {
 
     }
 
-    public Matrix Minor(Matrix m, int row, int col){
+    public static float Minor(Matrix m, int row, int col){
         Matrix newM = new Matrix(m.size - 1);
         int mi = 0;
         int mj = 0;
@@ -68,15 +68,15 @@ public class Calculator {
                     continue;
                 }
                 newM.SetValue(mi,mj,m.GetValue(i,j));
-                if(mi == newM.size - 1){
-                    mi = 0;
-                    mj ++;
-                }else{
+                if(mj == newM.size - 1){
+                    mj = 0;
                     mi ++;
+                }else{
+                    mj ++;
                 }
             }
         }
-        return newM;
+        return Determinant(newM);
     }
 
     public int Rank(Matrix m){

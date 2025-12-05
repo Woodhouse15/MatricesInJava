@@ -2,7 +2,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.fail;
 
 public class CalculatorTest {
 
@@ -49,20 +48,34 @@ public class CalculatorTest {
 	public void DeterminantOne(){
 		Matrix matrix = new Matrix(3);
 		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-		Assert.assertEquals(Calculator.Determinant(matrix), 0,0);
+		Assert.assertEquals( 0,Calculator.Determinant(matrix),0);
 	}
 
 	@Test
 	public void DeterminantTwo(){
 		Matrix matrix = new Matrix(4);
 		matrix.matrix = new float[][]{{1,3,5,9},{1,3,1,7},{4,3,9,7},{5,2,0,9}};
-		Assert.assertEquals(Calculator.Determinant(matrix),-376,0);
+		Assert.assertEquals(-376,Calculator.Determinant(matrix),0);
 	}
 
 	@Test
 	public void DeterminantThree(){
 		Matrix matrix = new Matrix(2);
 		matrix.matrix = new float[][]{{3,2},{2,3}};
-		Assert.assertEquals(Calculator.Determinant(matrix), 5,0);
+		Assert.assertEquals(5,Calculator.Determinant(matrix), 0);
+	}
+
+	@Test
+	public void MinorTestOne(){
+		Matrix matrix = new Matrix(3);
+		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		Assert.assertEquals(-6,Calculator.Minor(matrix,1,2),0);
+	}
+
+	@Test
+	public void MinorTestTwo(){
+		Matrix matrix = new Matrix(3);
+		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		Assert.assertEquals(-3,Calculator.Minor(matrix,2,2),0);
 	}
 }
