@@ -78,4 +78,27 @@ public class CalculatorTest {
 		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 		Assert.assertEquals(-3,Calculator.Minor(matrix,2,2),0);
 	}
+
+	@Test
+	public void Transpose(){
+		Matrix matrix = new Matrix(3);
+		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		Matrix result = new Matrix(3);
+		result.matrix = new float[][]{{1,4,7},{2,5,8},{3,6,9}};
+		Assert.assertArrayEquals(result.matrix, Calculator.Transpose(matrix).matrix);
+	}
+
+	@Test
+	public void CofactorOne() throws Exception {
+		Matrix matrix = new Matrix(3);
+		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		Assert.assertEquals(6,Calculator.Cofactor(matrix,1,2),0);
+	}
+
+	@Test
+	public void CofactorTwo() throws Exception {
+		Matrix matrix = new Matrix(3);
+		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		Assert.assertEquals(-3,Calculator.Cofactor(matrix,2,2),0);
+	}
 }

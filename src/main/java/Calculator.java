@@ -125,7 +125,7 @@ public class Calculator {
         return matrix;
     }
 
-    public Matrix Transpose(Matrix m){
+    public static Matrix Transpose(Matrix m){
         Matrix newMatrix = new Matrix(m.size);
         for(int i = 0; i < m.size; i++){
             for(int j = 0; j < m.size; j++){
@@ -133,6 +133,15 @@ public class Calculator {
             }
         }
         return newMatrix;
+    }
+
+    public static float Cofactor(Matrix m, int row, int col) throws Exception {
+        if(row > m.size || col > m.size){
+            throw new Exception("Out of bounds");
+        }else{
+            int val = row + col + 2;
+            return (float) (Math.pow(-1,val) * Minor(m,row,col));
+        }
     }
 
     public Matrix Invert(Matrix m){
