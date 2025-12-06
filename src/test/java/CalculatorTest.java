@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.awt.image.RescaleOp;
+
 import static org.junit.Assert.assertThrows;
 
 public class CalculatorTest {
@@ -101,4 +103,33 @@ public class CalculatorTest {
 		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 		Assert.assertEquals(-3,Calculator.Cofactor(matrix,2,2),0);
 	}
+
+	@Test
+	public void SwapRows(){
+		Matrix matrix = new Matrix(3);
+		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		Matrix result = new Matrix(3);
+		result.matrix = new float[][]{{4, 5, 6},{1, 2, 3}, {7, 8, 9}};
+		Assert.assertArrayEquals(result.matrix, Calculator.SwapRow(matrix,0,1).matrix);
+	}
+
+	@Test
+	public void MultRow(){
+		Matrix matrix = new Matrix(3);
+		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		Matrix result = new Matrix(3);
+		result.matrix = new float[][]{{4, 8, 12}, {4, 5, 6}, {7, 8, 9}};
+		Assert.assertArrayEquals(result.matrix, Calculator.MultRow(matrix,0,4).matrix);
+	}
+
+	@Test
+	public void AddRow(){
+		Matrix matrix = new Matrix(3);
+		matrix.matrix = new float[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		Matrix result = new Matrix(3);
+		result.matrix = new float[][]{{1, 2, 3}, {6, 9, 12}, {7, 8, 9}};
+		Assert.assertArrayEquals(result.matrix, Calculator.AddRows(matrix,0,1,2).matrix);
+	}
+
+
 }

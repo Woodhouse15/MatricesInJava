@@ -109,8 +109,8 @@ public class Calculator {
         return m;
     }
 
-    public Matrix SwapRow(Matrix matrix, int i, int j){
-        for(int k = 0; k <= matrix.size; k++){
+    public static Matrix SwapRow(Matrix matrix, int i, int j){
+        for(int k = 0; k < matrix.size; k++){
             float temp = matrix.GetValue(i,k);
             matrix.SetValue(i,k, matrix.GetValue(j,k));
             matrix.SetValue(j,k,temp);
@@ -118,9 +118,16 @@ public class Calculator {
         return matrix;
     }
 
-    public Matrix MultRow(Matrix matrix, int i, int scalar){
+    public static Matrix MultRow(Matrix matrix, int i, int scalar){
         for(int j = 0; j < matrix.size; j++){
             matrix.SetValue(i,j, matrix.GetValue(i,j) * scalar);
+        }
+        return matrix;
+    }
+
+    public static Matrix AddRows(Matrix matrix, int i, int j, int k){
+        for(int l = 0; l < matrix.size; l++){
+            matrix.SetValue(j,l, matrix.GetValue(j,l)+(matrix.GetValue(i,l)*k) );
         }
         return matrix;
     }
